@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Store | Shop Products</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h1 { font-size: 1.875rem; font-weight: 700; color: var(--text); }
+
+        .view-cart-btn {
+            background-color: var(--text);
+            color: white;
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .view-cart-btn:hover { background-color: #000; transform: translateY(-1px); }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        .product-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info p {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .add-btn {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .add-btn:hover { background-color: var(--primary-hover); }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem; }
+            header { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Modern Store</h1>
+            <a href="cart.jsp" class="view-cart-btn">
+                <span>🛒</span> View Shopping Cart
+            </a>
+        </header>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>Laptop</h3>
+                    <p>High-performance machine for professional work and gaming.</p>
+                </div>
+                <form action="CartServlet" method="POST">
+                    <input type="hidden" name="product" value="Laptop">
+                    <button type="submit" class="add-btn">Add to Cart</button>
+                </form>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>Smartphone</h3>
+                    <p>Latest flagship model with an amazing camera system.</p>
+                </div>
+                <form action="CartServlet" method="POST">
+                    <input type="hidden" name="product" value="Smartphone">
+                    <button type="submit" class="add-btn">Add to Cart</button>
+                </form>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>Headphones</h3>
+                    <p>Noise-cancelling wireless headphones for immersive sound.</p>
+                </div>
+                <form action="CartServlet" method="POST">
+                    <input type="hidden" name="product" value="Headphones">
+                    <button type="submit" class="add-btn">Add to Cart</button>
+                </form>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>Monitor</h3>
+                    <p>4K Ultra HD display with vibrant colors and sleek design.</p>
+                </div>
+                <form action="CartServlet" method="POST">
+                    <input type="hidden" name="product" value="Monitor">
+                    <button type="submit" class="add-btn">Add to Cart</button>
+                </form>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>Keyboard</h3>
+                    <p>Mechanical RGB keyboard for a superior typing experience.</p>
+                </div>
+                <form action="CartServlet" method="POST">
+                    <input type="hidden" name="product" value="Keyboard">
+                    <button type="submit" class="add-btn">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
