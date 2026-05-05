@@ -28,12 +28,13 @@ This is a Simple Shopping Cart application built using Java Servlets and JSP. Th
 ## Screenshots
 
 ### Input Form (Product Selection)
-![Input Form](screenshots/screenshot1.png)
-*(Note: Replace with actual screenshot of index.html)*
+
+<img width="1920" height="1080" alt="Screenshot 1" src="https://github.com/user-attachments/assets/9438c634-99fd-4310-870c-63f07d98a58f" />
+
 
 ### Output / Result Page (Shopping Cart)
-![Output Page](screenshots/screenshot2.png)
-*(Note: Replace with actual screenshot of cart.jsp)*
+<img width="1920" height="1080" alt="Screenshot 2" src="https://github.com/user-attachments/assets/e34c813b-407a-4919-9004-75d51c580e16" />
+
 
 ## Servlet Concept Practiced
 - **HttpSession**: Used to maintain the shopping cart state across multiple requests by storing an `ArrayList<String>` in the session.
